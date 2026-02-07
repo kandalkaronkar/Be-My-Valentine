@@ -54,7 +54,7 @@ h1{
   font-size: clamp(22px, 3.5vw, 36px);
   font-weight: 900;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .buttons{
@@ -73,7 +73,7 @@ h1{
   font-weight: 800;
   cursor:pointer;
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
-  transition: transform .08s ease, background .15s ease;
+  transition: transform .12s ease, background .15s ease;
   user-select:none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -97,6 +97,12 @@ h1{
   top: 30px;
 }
 
+/* YES grows only once via JS */
+.yes.boost{
+  transform: scale(1.28);
+}
+
+/* Big buttons for later screens */
 .btn.big{
   position: static;
   margin-top: 10px;
@@ -110,23 +116,11 @@ h1{
   color: var(--muted);
 }
 
-.footer{
-  color: rgba(0,0,0,.55);
-  font-size: 12px;
-  text-align:center;
-}
-
-.hint{
-  background: rgba(255,255,255,.55);
-  padding: 8px 12px;
-  border-radius: 999px;
-}
-
 .screen[hidden]{ display:none !important; }
 
 .media{
-  width: min(380px, 92%);
-  max-height: 46vh;
+  width: min(420px, 92%);
+  max-height: 52vh; /* safe for iPhone Pro Max + Fold */
   object-fit: cover;
   border-radius: 18px;
   margin: 14px auto 18px;
